@@ -22,4 +22,13 @@
     <bean id="swagger" class="com.yaojiafeng.web.swagger.AppServiceApplication"/>
 
     <mvc:resources mapping="/dist/**" location="/dist/"/>
+
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="contentType" value="text/html;charset=UTF-8"/>
+        <property name="order" value="0"/>
+    </bean>
 </beans>
