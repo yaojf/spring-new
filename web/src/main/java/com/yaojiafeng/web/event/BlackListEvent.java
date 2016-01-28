@@ -1,12 +1,16 @@
 package com.yaojiafeng.web.event;
 
+import com.wordnik.swagger.annotations.ApiModel;
+import com.wordnik.swagger.annotations.ApiModelProperty;
 import org.springframework.context.ApplicationEvent;
 
 /**
  * Created by yaojiafeng on 16/1/27.
  */
+@ApiModel
 public class BlackListEvent extends ApplicationEvent {
 
+    @ApiModelProperty
     private final String address;
     private final String test;
 

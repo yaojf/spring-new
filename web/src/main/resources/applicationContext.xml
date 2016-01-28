@@ -35,4 +35,9 @@
     <bean id="blackListNotifier" class="com.yaojiafeng.web.event.BlackListNotifier">
         <property name="notificationAddress" value="blacklist@example.org"/>
     </bean>
+
+    <context:annotation-config/>
+
+    <bean class="com.yaojiafeng.web.config.AppConfig" />
+
 </beans>

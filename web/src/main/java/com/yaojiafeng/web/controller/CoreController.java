@@ -2,6 +2,7 @@ package com.yaojiafeng.web.controller;
 
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
+import com.yaojiafeng.web.event.BlackListEvent;
 import com.yaojiafeng.web.event.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,13 +26,13 @@ public class CoreController {
     @ApiOperation(value = "添加用户", httpMethod = "POST", response = String.class, notes = "add user")
     public String addUser(@ApiParam(required = true, name = "postData", value = "用户信息json数据") @RequestParam(
             value = "postData", defaultValue = "") String postData, HttpServletRequest request) {
-
         return "hello";
     }
 
 
     @Autowired
     private EmailService emailService;
+
 
     @RequestMapping(value = "/send")
     public String send() {
