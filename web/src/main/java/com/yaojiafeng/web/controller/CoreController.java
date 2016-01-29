@@ -2,15 +2,15 @@ package com.yaojiafeng.web.controller;
 
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
-import com.yaojiafeng.web.event.BlackListEvent;
+import com.yaojiafeng.dao.bean.User;
 import com.yaojiafeng.web.event.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -39,5 +39,22 @@ public class CoreController {
         emailService.sendEmail("john.doe@example.org", "john.doe@example.org");
         return "success";
     }
+
+
+    @RequestMapping(value = "/user/{userid}")
+    public String queryUser(@PathVariable("userid") long userID, ModelMap model)
+
+    {
+        User u = new User();
+
+        u.setUserID(userID);
+
+        u.setUserName("zhaoyang");
+
+        model.addAttribute("User", u);
+
+        return "user";
+    }
+
 
 }

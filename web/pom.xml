@@ -13,4 +13,12 @@
 
     <packaging>war</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.yaojiafeng.springnew</groupId>
+            <artifactId>service</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
 </project>
