@@ -15,15 +15,20 @@
         http://www.springframework.org/schema/task
 		http://www.springframework.org/schema/task/spring-task-3.0.xsd"
        default-autowire="byName">
+    <!--spring mvc-->
     <mvc:annotation-driven/>
 
+    <!--扫描配置-->
     <context:component-scan base-package="com.yaojiafeng.web.controller"/>
 
+    <!--swagger-->
     <bean id="swagger" class="com.yaojiafeng.web.swagger.AppServiceApplication"/>
 
+    <!--静态资源-->
     <mvc:resources mapping="/dist/**" location="/dist/"/>
 
 
+    <!--jsp视图-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/jsp/"/>
@@ -32,7 +37,7 @@
         <property name="order" value="1"/>
     </bean>
 
-
+    <!--协商视图-->
     <bean id="cnManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
         <property name="ignoreAcceptHeader" value="true"/>
         <property name="favorPathExtension" value="true"/>
@@ -69,5 +74,9 @@
             </list>
         </property>
     </bean>
+
+    <!--全局异常处理-->
+    <bean class="com.yaojiafeng.web.exception.ExceptionAdvice"/>
+
 
 </beans>

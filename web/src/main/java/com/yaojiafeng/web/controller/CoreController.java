@@ -56,5 +56,8 @@ public class CoreController {
         return "user";
     }
 
-
+    @RequestMapping(value = "/ex")
+    public String ex() throws Exception {
+        throw new Exception();
+    }
 }
