@@ -4,6 +4,8 @@ import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 import com.yaojiafeng.dao.bean.User;
 import com.yaojiafeng.web.event.EmailService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,6 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/")
 public class CoreController {
+
+    private static final Logger logger = LoggerFactory.getLogger(CoreController.class);
 
     @ResponseBody
     @RequestMapping(value = "/addUser")
@@ -58,6 +62,7 @@ public class CoreController {
 
     @RequestMapping(value = "/ex")
     public String ex() throws Exception {
+        logger.error("new Exception");
         throw new Exception();
     }
 }
