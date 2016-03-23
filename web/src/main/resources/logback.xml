@@ -15,12 +15,12 @@
         <Encoding>UTF-8</Encoding>
         <File>${location}/test.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${location}/test-%d{yyyy-MM-dd}.log
+            <FileNamePattern>${location}/test-%d{yyyy-MM-dd}.%i.log
             </FileNamePattern>
             <MaxHistory>10</MaxHistory>
             <TimeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <MaxFileSize>5MB</MaxFileSize>
+                <MaxFileSize>50MB</MaxFileSize>
             </TimeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <layout class="ch.qos.logback.classic.PatternLayout">

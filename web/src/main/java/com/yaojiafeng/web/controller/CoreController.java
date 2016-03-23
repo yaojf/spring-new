@@ -2,6 +2,7 @@ package com.yaojiafeng.web.controller;
 
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
+import com.yaojiafeng.common.util.LogUtils;
 import com.yaojiafeng.dao.bean.User;
 import com.yaojiafeng.web.event.EmailService;
 import org.slf4j.Logger;
@@ -62,7 +63,7 @@ public class CoreController {
 
     @RequestMapping(value = "/ex")
     public String ex() throws Exception {
-        logger.error("new Exception");
+        LogUtils.info(logger, ("new Exception"));
         throw new Exception();
     }
 }
