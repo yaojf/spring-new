@@ -29,11 +29,11 @@ import java.util.concurrent.CountDownLatch;
  * @author http://blog.csdn.net/java2000_wl
  * @version <b>1.0</b>
  */
-public class AppServer {
+public class ZK {
 
     private static final int SESSION_TIMEOUT = 30000;
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(AppServer.class);
+    public static final Logger LOGGER = LoggerFactory.getLogger(ZK.class);
 
     public static CountDownLatch latch = new CountDownLatch(1);
 
