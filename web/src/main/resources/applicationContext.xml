@@ -41,4 +41,7 @@
     <!--注解配置类-->
     <bean class="com.yaojiafeng.web.config.AppConfig"/>
 
+    <!--开启aop,强制使用cglib代理-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
 </beans>
