@@ -14,7 +14,7 @@ public class SearchTest {
     public static void main(String[] args) {
         ServiceLoader<Search> s = ServiceLoader.load(Search.class);
         Iterator<Search> searchs = s.iterator();
-        if (searchs.hasNext()) {
+        while (searchs.hasNext()) {
             Search curSearch = searchs.next();
             curSearch.search("test");
         }
