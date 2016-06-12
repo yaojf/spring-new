@@ -40,9 +40,9 @@
     <!--协商视图-->
     <bean id="cnManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
         <property name="ignoreAcceptHeader" value="true"/>
-        <property name="favorPathExtension" value="true"/>
+        <property name="favorPathExtension" value="false"/>
         <property name="defaultContentType" value="text/html"/>
-        <property name="favorParameter" value="false"/>
+        <property name="favorParameter" value="true"/>
         <property name="mediaTypes">
             <map>
                 <entry key="xml" value="application/xml"/>
@@ -61,15 +61,9 @@
                 <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
                 </bean>
                 <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
-                    <constructor-arg>
-                        <bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
-                            <property name="packagesToScan">
-                                <array>
-                                    <value>com.yaojiafeng.dao.bean</value>
-                                </array>
-                            </property>
-                        </bean>
-                    </constructor-arg>
+                    <property name="marshaller">
+                        <bean class="org.springframework.oxm.xstream.XStreamMarshaller"/>
+                    </property>
                 </bean>
             </list>
         </property>

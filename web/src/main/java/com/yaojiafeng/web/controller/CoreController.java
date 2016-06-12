@@ -1,9 +1,11 @@
 package com.yaojiafeng.web.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 import com.yaojiafeng.common.util.LogUtils;
 import com.yaojiafeng.dao.bean.User;
+import com.yaojiafeng.web.core.Response;
 import com.yaojiafeng.web.event.EmailService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.*;
 
 /**
  * Created by yaojiafeng on 16/1/25.
@@ -65,5 +68,30 @@ public class CoreController {
     public String ex() throws Exception {
         LogUtils.info(logger, ("new Exception"));
         throw new Exception();
+    }
+
+
+    @RequestMapping(value = "/xml")
+    public Response xml() {
+
+        List<User> users = new ArrayList<>();
+
+
+        User u1 = new User();
+        u1.setUserID(1L);
+        u1.setUserName("zhaoyang1");
+        User u2 = new User();
+        u2.setUserID(2L);
+        u2.setUserName("zhaoyang2");
+        users.add(u1);
+        users.add(u2);
+
+
+        Response response = new Response();
+        response.setCode(0);
+        response.setMsg("success");
+        response.setInfo(users);
+        return response;
+
     }
 }

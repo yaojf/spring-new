@@ -30,4 +30,13 @@
     <bean class="com.yaojiafeng.common.util.ApplicationUtils"/>
 
 
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:config.properties</value>
+        </property>
+    </bean>
+
+    <bean class="com.yaojiafeng.common.beanfactory.PropertiesBeanFactoryPostProcessor"/>
+
+    <bean class="com.yaojiafeng.common.beanfactory.PropertiesBeanPostProcessor"/>
 </beans>
