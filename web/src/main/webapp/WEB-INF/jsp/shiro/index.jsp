@@ -11,9 +11,6 @@
     <title>Index</title>
 </head>
 <body>
-
-
-
-
+${username}
 </body>
 </html>

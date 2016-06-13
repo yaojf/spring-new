@@ -20,7 +20,11 @@ import java.util.List;
  */
 public class ShiroRealm extends AuthorizingRealm {
 
-
+    /**
+     * 授权
+     * @param principals
+     * @return
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         // 根据用户配置用户与权限
@@ -43,9 +47,16 @@ public class ShiroRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         // 增加角色
         info.addRoles(roles);
+        info.addStringPermissions(roles);
         return info;
     }
 
+    /**
+     * 认证
+     * @param authcToken
+     * @return
+     * @throws AuthenticationException
+     */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) authcToken;

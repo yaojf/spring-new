@@ -62,7 +62,7 @@
                 /login=anon
                 /submit=anon
                 /error=anon
-                /member/**=authc,roles["member"]
+                /member/**=authc,roles["member"],perms["member"]
             </value>
         </property>
     </bean>

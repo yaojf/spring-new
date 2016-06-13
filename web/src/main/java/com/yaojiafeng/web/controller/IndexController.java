@@ -4,7 +4,11 @@
  */
 package com.yaojiafeng.web.controller;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,9 +23,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
     // 拦截/index.htm 方法为GET的请求
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public ModelAndView index() {
+    public ModelAndView index(ModelMap model) {
         ModelAndView view = new ModelAndView();
         view.setViewName("shiro/index");
+
+        Subject subject = SecurityUtils.getSubject();
+
+        view.addObject("username",subject.getPrincipal() );
+
         return view;
     }
 

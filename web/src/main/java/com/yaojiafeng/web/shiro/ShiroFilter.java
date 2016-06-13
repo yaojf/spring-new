@@ -43,7 +43,6 @@ public class ShiroFilter implements Filter {
                         .getPassword());
                 subjects = SecurityUtils.getSubject();
                 subjects.login(token);
-                subjects.getSession();
             } else {
                 // 如果用户为空，则subjects信息登出
                 if (subjects != null) {
