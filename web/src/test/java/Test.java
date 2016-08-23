@@ -1,5 +1,5 @@
 import com.thoughtworks.xstream.XStream;
-import com.yaojiafeng.dao.bean.User;
+import com.yaojiafeng.dao.entity.User;
 import com.yaojiafeng.web.core.Response;
 
 import java.util.ArrayList;
