@@ -26,6 +26,9 @@ import java.util.concurrent.CountDownLatch;
  */
 
 /**
+ *
+ * zk不支持递归自动创建节点按/分隔节点
+ *
  * @author http://blog.csdn.net/java2000_wl
  * @version <b>1.0</b>
  */
@@ -57,7 +60,7 @@ public class ZK {
      */
     @Before
     public void connect() throws IOException {
-        zooKeeper = new ZooKeeper("localhost:2181", SESSION_TIMEOUT, watcher);
+        zooKeeper = new ZooKeeper("139.196.29.122:2181", SESSION_TIMEOUT, watcher);
         try {
             latch.await();
         } catch (InterruptedException e) {
