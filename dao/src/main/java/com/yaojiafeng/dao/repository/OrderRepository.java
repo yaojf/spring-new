@@ -14,11 +14,13 @@ import java.util.List;
  */
 public interface OrderRepository {
 
-    void insert(Order model);
+    int insert(Order model);
 
     int update(List<Integer> userIds);
 
     int deleteAll();
 
     List<Order> selectAll();
+
+    Order selectByOrderId(int orderId);
 }
