@@ -14,6 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.HashMap;
 
 /**
+ * RequestResponseBodyMethodProcessor对于返回类型为MappingJacksonValue做特殊处理
+ * 返回jsonp的格式
+ *
+ *
  * @author yaojiafeng
  * @since $Revision:1.0.0, $Date: 2017/1/13 下午4:27 $
  */
