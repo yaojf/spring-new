@@ -17,13 +17,13 @@ import javax.annotation.Resource;
  * @since $Revision:1.0.0, $Date: 16/8/23 下午2:33 $
  */
 @Service
-@Transactional
+//@Transactional
 public class OrderService {
 
     @Resource
     private OrderRepository orderRepository;
 
-    @Transactional(readOnly = true)
+//    @Transactional(readOnly = true)
     public void select() {
         System.out.println(orderRepository.selectAll());
     }
