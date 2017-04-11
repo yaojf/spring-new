@@ -1,7 +1,3 @@
-/**
- * qccr.com Inc.
- * Copyright (c) 2014-2016 All Rights Reserved.
- */
 package com.yaojiafeng.dao.algorithm;
 
 import com.dangdang.ddframe.rdb.sharding.api.ShardingValue;

@@ -1,7 +1,3 @@
-/**
- * qccr.com Inc.
- * Copyright (c) 2014-2016 All Rights Reserved.
- */
 package com.yaojiafeng.web.controller;
 
 import org.apache.shiro.SecurityUtils;

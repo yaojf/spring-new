@@ -1,7 +1,3 @@
-/**
- * qccr.com Inc.
- * Copyright (c) 2014-2016 All Rights Reserved.
- */
 package com.yaojiafeng.common.zookeeper;
 
 import org.apache.zookeeper.CreateMode;
@@ -20,10 +16,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-
-/*
- * ZookeeperTest.java
- */
 
 /**
  *

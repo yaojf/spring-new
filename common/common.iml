@@ -150,5 +150,22 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-test:4.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc-portlet:4.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-websocket:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-http:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-util:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-webapp:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-xml:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-servlet:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-security:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-continuation:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-jsp:9.1.4.v20140401" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty.toolchain:jetty-schemas:3.1.M0" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.web:javax.servlet.jsp:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish:javax.el:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty.orbit:javax.servlet.jsp.jstl:1.2.0.v201105211821" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.web:javax.servlet.jsp.jstl:1.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jetty.orbit:org.eclipse.jdt.core:3.8.2.v20130121" level="project" />
   </component>
 </module>
