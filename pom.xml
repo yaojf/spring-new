@@ -16,6 +16,7 @@
     <properties>
         <spring.version>4.2.4.RELEASE</spring.version>
         <jetty.version>9.1.4.v20140401</jetty.version>
+        <jackson.version>2.4.4</jackson.version>
     </properties>
 
 
@@ -102,17 +103,17 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.7.0</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.7.0</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.7.0</version>
+            <version>${jackson.version}</version>
         </dependency>
 
 
@@ -225,8 +226,9 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
+            <version>3.1.0</version>
         </dependency>
+
 
         <!--swagger-->
         <dependency>

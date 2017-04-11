@@ -8,16 +8,17 @@ import org.eclipse.jetty.webapp.WebAppContext;
  */
 public class WebAppWarServer {
     public static void main(String[] args) throws Exception {
-        runFolder();
+//        runFolder();
+        runWar();
     }
 
 
     public static void runWar() throws Exception {
         Server server = new Server(8080);
-
+        String cp = Class.class.getResource("/").getPath();
         WebAppContext context = new WebAppContext();
         context.setContextPath("/");
-        context.setWar("E:/share/test/xxx.war");
+        context.setWar(cp + "../web.war");
         server.setHandler(context);
 
         server.start();
@@ -26,11 +27,11 @@ public class WebAppWarServer {
 
     public static void runFolder() throws Exception {
         Server server = new Server(8080);
-
+        String cp = Class.class.getResource("/").getPath();
         WebAppContext context = new WebAppContext();
         context.setContextPath("/");
-        context.setDescriptor("/WEB-INF/web.xml");
-        context.setResourceBase("web");
+        context.setDescriptor(cp + "../web/WEB-INF/web.xml");
+        context.setResourceBase(cp + "../web");
         context.setParentLoaderPriority(true);
         server.setHandler(context);
         server.start();
