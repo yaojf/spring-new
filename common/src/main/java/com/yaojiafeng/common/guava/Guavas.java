@@ -1,6 +1,7 @@
 package com.yaojiafeng.common.guava;
 
 import com.google.common.base.Joiner;
+import com.google.common.base.Objects;
 import com.google.common.base.Splitter;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
@@ -76,12 +77,22 @@ public class Guavas {
         }
     }
 
-    public static void main(String[] args) {
-//        rateLimiter(1.0);
-//        joiner();
-//        splitter();
 
+    /**
+     * Objects使用
+     */
+    public static void objects() {
+        System.out.println(Objects.equal("a", "a"));
+
+    }
+
+    public static void main(String[] args) {
+        rateLimiter(1.0);
+        joiner();
+        splitter();
         logger.info("logback 成功了");
+
+        objects();
     }
 
 

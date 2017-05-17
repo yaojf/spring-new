@@ -16,7 +16,7 @@ public abstract class VelocityUtils {
 
         Map<String, Object> model = new HashMap<>();
         model.put("name", "yaojiafeng");
-        String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "email.vm", model);
+        String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "email.vm", "UTF-8", model);
 
         return text;
     }
