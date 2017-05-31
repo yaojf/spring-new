@@ -415,6 +415,13 @@
             <version>${hystrix-metrics-event-stream.version}</version>
         </dependency>
 
+        <!--guice ioc框架-->
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>4.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
