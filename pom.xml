@@ -10,6 +10,8 @@
         <module>service</module>
         <module>dao</module>
         <module>common</module>
+        <!--流程引擎-->
+        <module>flowable</module>
     </modules>
     <name>parent</name>
 
@@ -432,6 +434,13 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
             <version>1.8.4.RELEASE</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.caucho/hessian -->
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.38</version>
         </dependency>
 
 
