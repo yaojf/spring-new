@@ -1,0 +1,5 @@
+!!com.yaojiafeng.common.yml.Me
+age: 1
+favoriteBooks: [Gone with the wind, The Little Prince]
+name: jiaobuchong
+params: {event: what's up, url: 'http://www.jiaobuchong.com'}
