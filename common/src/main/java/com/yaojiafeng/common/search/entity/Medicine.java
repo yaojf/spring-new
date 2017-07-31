@@ -43,4 +43,13 @@ public class Medicine {
     public void setFunction(String function) {
         this.function = function;
     }
+
+    @Override
+    public String toString() {
+        return "Medicine{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", function='" + function + '\'' +
+                '}';
+    }
 }

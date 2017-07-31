@@ -10,8 +10,6 @@
         <module>service</module>
         <module>dao</module>
         <module>common</module>
-        <!--流程引擎-->
-        <module>flowable</module>
         <!--测试各种代码-->
         <module>test</module>
     </modules>
