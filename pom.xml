@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.yaojiafeng.springnew</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>springnew</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>${my.project.version}</version>
     <modules>
         <module>web</module>
         <module>service</module>
@@ -16,6 +16,7 @@
     <name>parent</name>
 
     <properties>
+        <my.project.version>1.0.0</my.project.version>
         <spring.version>4.2.4.RELEASE</spring.version>
         <jetty.version>9.1.4.v20140401</jetty.version>
         <jackson.version>2.4.4</jackson.version>
