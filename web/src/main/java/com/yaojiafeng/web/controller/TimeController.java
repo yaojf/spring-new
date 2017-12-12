@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @create 2017-12-12 下午3:36
  */
 @Controller
-@RequestMapping(value = "/time")
 public class TimeController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/time", method = RequestMethod.GET)
     public String time() {
         return "index";
     }

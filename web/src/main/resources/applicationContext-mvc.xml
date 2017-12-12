@@ -27,14 +27,13 @@
     <!--静态资源-->
     <mvc:resources mapping="/dist/**" location="/dist/"/>
 
-
     <!--jsp视图-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
         <property name="contentType" value="text/html;charset=UTF-8"/>
-        <property name="order" value="1"/>
+        <property name="order" value="2"/>
     </bean>
 
     <!--协商视图-->
@@ -51,10 +50,9 @@
         </property>
     </bean>
 
-
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-        <property name="order" value="0"/>
+        <property name="order" value="1"/>
         <property name="contentNegotiationManager" ref="cnManager"/>
         <property name="defaultViews">
             <list>
@@ -72,8 +70,7 @@
     <!--全局异常处理-->
     <bean class="com.yaojiafeng.web.exception.ExceptionAdvice"/>
 
-    <bean id="velocityConfig"
-          class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
         <property name="resourceLoaderPath" value="/WEB-INF/pages"/>
         <property name="velocityProperties">
             <props>
@@ -83,7 +80,8 @@
         </property>
     </bean>
 
-    <bean id="velocityLayoutViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+    <bean id="velocityLayoutViewResolver"
+          class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
         <property name="cache" value="true"/>
         <property name="prefix" value=""/>
         <property name="layoutUrl" value="layout/layout.vm"/>
@@ -98,7 +96,7 @@
         <property name="exposeRequestAttributes" value="true"/>
         <property name="viewClass"
                   value="org.springframework.web.servlet.view.velocity.VelocityLayoutView"/>
-        <property name="order" value="2"/>
+        <property name="order" value="0"/>
     </bean>
 
     <!--请求拦截器-->
