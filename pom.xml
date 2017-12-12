@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.yaojiafeng.springnew</groupId>
-    <artifactId>springnew</artifactId>
+    <groupId>com.yaojiafeng.spring</groupId>
+    <artifactId>spring</artifactId>
     <packaging>pom</packaging>
-    <version>${my.project.version}</version>
+    <version>1.0.0</version>
     <modules>
         <module>web</module>
         <module>service</module>
@@ -16,7 +16,6 @@
     <name>parent</name>
 
     <properties>
-        <my.project.version>1.0.0</my.project.version>
         <spring.version>4.2.4.RELEASE</spring.version>
         <jetty.version>9.1.4.v20140401</jetty.version>
         <jackson.version>2.4.4</jackson.version>
@@ -49,6 +48,20 @@
     </dependencyManagement>
 
     <dependencies>
+        <!--数据库-->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.2.1</version>
+        </dependency>
+
+        <!--netty-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>5.0.0.Alpha2</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>

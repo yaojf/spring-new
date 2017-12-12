@@ -72,5 +72,40 @@
     <!--全局异常处理-->
     <bean class="com.yaojiafeng.web.exception.ExceptionAdvice"/>
 
+    <bean id="velocityConfig"
+          class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="resourceLoaderPath" value="/WEB-INF/pages"/>
+        <property name="velocityProperties">
+            <props>
+                <prop key="input.encoding">utf-8</prop>
+                <prop key="output.encoding">utf-8</prop>
+            </props>
+        </property>
+    </bean>
 
+    <bean id="velocityLayoutViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+        <property name="cache" value="true"/>
+        <property name="prefix" value=""/>
+        <property name="layoutUrl" value="layout/layout.vm"/>
+        <property name="toolboxConfigLocation" value="/WEB-INF/velocity/velocity-toolbox.xml"/>
+        <property name="suffix" value=".vm"/>
+        <property name="contentType" value="text/html; charset=utf-8"></property>
+        <property name="exposeSpringMacroHelpers" value="true"/>
+        <property name="allowSessionOverride" value="true"/>
+        <property name="allowRequestOverride" value="true"/>
+        <property name="exposeSessionAttributes" value="true"/>
+        <property name="requestContextAttribute" value="rc"/>
+        <property name="exposeRequestAttributes" value="true"/>
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.velocity.VelocityLayoutView"/>
+        <property name="order" value="2"/>
+    </bean>
+
+    <!--请求拦截器-->
+    <mvc:interceptors>
+        <bean class="com.yaojiafeng.web.interceptor.TimeInterceptor"></bean>
+    </mvc:interceptors>
+
+    <!--mvc静态资源-->
+    <mvc:resources location="/static/" mapping="/static/**"/>
 </beans>

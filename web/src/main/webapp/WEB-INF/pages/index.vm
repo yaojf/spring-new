@@ -1,0 +1,7 @@
+hello world!
+<br>
+$!dateUtils.now()
+<br>
+处理耗时:$!{time}毫秒.
+<br>
+$!{now}
