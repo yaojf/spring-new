@@ -6,6 +6,8 @@ import org.springframework.core.ParameterNameDiscoverer;
 /**
  * 根据class文件解析方法参数名
  *
+ * 解析的方法不能是接口的方法，因为接口方法字节码不保存参数名称
+ *
  * @author yaojiafeng
  * @create 2017-07-04 下午2:54
  * @see http://blog.csdn.net/wwwwenl/article/details/53427039
