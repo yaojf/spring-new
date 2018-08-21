@@ -12,6 +12,9 @@ public class SpringCache {
 
     /**
      * 加缓存
+     *
+     * value=data 代表1级key 从EhCacheCacheManager获取Cache
+     * key=#id 代表2级key 从Cache获取
      * @param id
      * @return
      */
