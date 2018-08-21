@@ -11,6 +11,7 @@ package com.yaojiafeng.test.aop;
  */
 public class HelloServiceImpl implements HelloService {
 
+    @LogMDC
     public String hello() {
         return "hello";
     }
