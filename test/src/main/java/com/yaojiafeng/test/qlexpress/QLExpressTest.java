@@ -1,4 +1,4 @@
-package com.yaojiafeng.test.QLExpress;
+package com.yaojiafeng.test.qlexpress;
 
 import com.ql.util.express.*;
 import com.ql.util.express.instruction.detail.Instruction;

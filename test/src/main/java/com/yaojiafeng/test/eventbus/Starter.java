@@ -1,4 +1,4 @@
-package com.yaojiafeng.test.EventBus;
+package com.yaojiafeng.test.eventbus;
 
 import com.google.common.eventbus.EventBus;
 
