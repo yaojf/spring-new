@@ -12,6 +12,7 @@
         <module>common</module>
         <!--测试各种代码-->
         <module>test</module>
+        <module>memcached-swing</module>
     </modules>
     <name>parent</name>
 
