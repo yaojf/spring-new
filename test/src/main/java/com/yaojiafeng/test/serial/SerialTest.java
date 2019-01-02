@@ -10,7 +10,7 @@ import java.io.*;
 
 /**
  * jdk序列化会校验serialVersionUID，如果没有设置serialVersionUID编译时会自动生成
- * ，并且随着类的属性或方法不一样serialVersionUID会变化，所以修改类会报错
+ * ，并且随着类的属性或方法不一样serialVersionUID会变化，所以修改类会报错,属性也会校验serialVersionUID
  * <p>
  * Hessian2序列化不会校验serialVersionUID，所以修改类不会报错
  * <p>
@@ -25,7 +25,12 @@ public class SerialTest {
         storeCouponOperatorTO.setOperator("1");
         storeCouponOperatorTO.setStoreId(1L);
 
-        byte[] serialize = serialize(storeCouponOperatorTO);
+        CouponTO couponTO = new CouponTO();
+        couponTO.setId(1L);
+
+        storeCouponOperatorTO.setCouponTO(couponTO);
+
+        byte[] serialize = jdkSerialize(storeCouponOperatorTO);
         FileOutputStream fileOutputStream = new FileOutputStream(new File("serialize"));
         fileOutputStream.write(serialize);
         fileOutputStream.close();
@@ -37,7 +42,7 @@ public class SerialTest {
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         IOUtils.copyLarge(fileInputStream, byteArrayOutputStream);
-        Object deserialize = deserialize(byteArrayOutputStream.toByteArray());
+        Object deserialize = jdkDeserialize(byteArrayOutputStream.toByteArray());
 
         System.out.println(JSON.toJSONString(deserialize));
     }
@@ -60,7 +65,7 @@ public class SerialTest {
         return cc;
     }
 
-    public static Object deserialize(byte[] by) throws IOException {
+    public static Object deserialize(byte[] by) {
         try {
             if (by == null) throw new NullPointerException();
             ByteArrayInputStream is = new ByteArrayInputStream(by);
@@ -72,4 +77,32 @@ public class SerialTest {
         return null;
     }
 
+
+    public static byte[] jdkSerialize(Object obj) throws IOException {
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        ObjectOutputStream ho = new ObjectOutputStream(os);
+        byte[] cc = null;
+        try {
+            if (obj == null) throw new NullPointerException();
+            ho.writeObject(obj);
+            cc = os.toByteArray();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ho.close();
+        }
+        return cc;
+    }
+
+    public static Object jdkDeserialize(byte[] by) {
+        try {
+            if (by == null) throw new NullPointerException();
+            ByteArrayInputStream is = new ByteArrayInputStream(by);
+            ObjectInputStream hi = new ObjectInputStream(is);
+            return hi.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

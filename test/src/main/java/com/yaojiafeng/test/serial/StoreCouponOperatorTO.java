@@ -7,6 +7,8 @@ import java.io.Serializable;
  */
 public class StoreCouponOperatorTO implements Serializable {
 
+    private static final long serialVersionUID = 3635130888193534767L;
+
     /**
      * 优惠券ID
      */
@@ -21,6 +23,8 @@ public class StoreCouponOperatorTO implements Serializable {
      * 店铺ID
      */
     private Long storeId;
+
+    private CouponTO couponTO;
 
     public Long getCouponId() {
         return couponId;
@@ -46,4 +50,11 @@ public class StoreCouponOperatorTO implements Serializable {
         this.storeId = storeId;
     }
 
+    public CouponTO getCouponTO() {
+        return couponTO;
+    }
+
+    public void setCouponTO(CouponTO couponTO) {
+        this.couponTO = couponTO;
+    }
 }
