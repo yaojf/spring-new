@@ -53,9 +53,9 @@ public class Hessians {
 
         City city = new City(1L, "beijing");
 
-        byte[] bytes = serialize2(city);
+        byte[] bytes = serialize(city);
 
-        Object o = deserialize2(bytes);
+        Object o = deserialize(bytes);
 
         System.out.println(o);
     }
