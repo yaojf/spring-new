@@ -22,13 +22,31 @@ public class App {
         JPanel panel = new JPanel();                // 创建面板容器，使用默认的布局管理器
 
         // 3. 创建一个基本组件（按钮），并添加到 面板容器 中
-        JButton btn = new JButton("清除缓存");
-        panel.add(btn);
+        JButton btn1 = new JButton("清除memcached缓存");
+        panel.add(btn1);
+        JButton btn2 = new JButton("清除redis缓存");
+        panel.add(btn2);
 
-        btn.addActionListener(e -> {
-            String message = "清除成功！";
+        btn1.addActionListener(e -> {
+            String message = "清除memcached缓存成功！";
             try {
                 MemcachedUtil.main(null);
+            } catch (IOException e1) {
+                message = e1.getMessage();
+            } catch (InterruptedException e1) {
+                message = e1.getMessage();
+            } catch (MemcachedException e1) {
+                message = e1.getMessage();
+            } catch (TimeoutException e1) {
+                message = e1.getMessage();
+            }
+            JOptionPane.showMessageDialog(null, message, "结果", JOptionPane.INFORMATION_MESSAGE);
+        });
+
+        btn2.addActionListener(e -> {
+            String message = "清除redis缓存成功！";
+            try {
+                RedisUtil.main(null);
             } catch (IOException e1) {
                 message = e1.getMessage();
             } catch (InterruptedException e1) {
