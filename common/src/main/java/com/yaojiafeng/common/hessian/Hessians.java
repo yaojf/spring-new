@@ -10,6 +10,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
+ * hession序列化目前来看是针对field字段来进行序列化和反序列化，跟set get方法无关
+ *
+ * 反序列化的对象增减字段不会影响反序列化结果，新增的字段为null，减少的字段忽略
+ *
  * @author yaojiafeng
  * @create 2017-06-29 下午3:48
  */
