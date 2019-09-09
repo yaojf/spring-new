@@ -12,6 +12,11 @@
     <artifactId>test</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>2.7.0</version>
+        </dependency>
         <!--字节码解析库-->
         <dependency>
             <groupId>org.ow2.asm</groupId>
