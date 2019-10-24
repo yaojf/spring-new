@@ -18,6 +18,8 @@ import java.io.IOException;
  * 反序列化的对象增减字段不会影响反序列化结果，新增的字段为null，减少的字段忽略，不会报异常，而且不会校验serialVersionUID
  *
  * 序列化方式必须配对使用，不同序列化反序列化方式会报异常（比如用Hessian序列化，用Hessian2反序列化会报异常，反之亦然）
+ *
+ * 当反序列化找不到对应的类时，会打印类找不到异常警告，但是反序列化能成功，返回的值为HashMap
  * @author yaojiafeng
  * @create 2017-06-29 下午3:48
  */
